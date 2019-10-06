@@ -1,3 +1,10 @@
-.btn btn-primary mb-2{
-    color: aqua;
+body{
+    background-color: deeppink;
+
+}
+
+#logar{
+
+border: 5px solid green;
+background-color: green;
 }
