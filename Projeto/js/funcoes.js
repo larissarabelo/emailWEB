@@ -21,7 +21,7 @@ $(document).ready(function(){
         }
 
         else{
-
+            alert();
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 },
 
                 success:function(retorno){
-                    if(retorno = true){
+                    if(retorno == true){
                         alert("Bem vindo!");
                         location.replace("./paginas/Email.html");
                     }
@@ -66,8 +66,8 @@ $(document).ready(function(){
                 url:        "../php/gravarXML.php",
 
                 data:{
-                    email:              ajax_email,
-                    senha:              ajax_senha
+                    "email": email,
+                    "senha": senha
                 },
 
                 success:function(retorno){
