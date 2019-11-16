@@ -32,6 +32,7 @@ $(document).ready(function(){
                     for(var i=0;i<retorno.length;i++){
                     ajax_emailLido = retorno[i].email;
                     ajax_senhaLida = retorno[i].senha;
+                    
                     if(ajax_emailLido==ajax_email && ajax_senhaLida==ajax_senha){
                             loginOK=true;
                             console.log("ajax_email"+ajax_email);
@@ -41,8 +42,6 @@ $(document).ready(function(){
                     
                 }
             });
-
-        
 
             if(loginOK==true){
                
