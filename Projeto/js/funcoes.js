@@ -25,7 +25,7 @@ $(document).ready(function(){
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
-                url:        "./php/listarXML.php",
+                url:        "../php/listarXML.php",
 
                 success:function(retorno){
 
@@ -47,7 +47,7 @@ $(document).ready(function(){
             if(loginOK==true){
                
                 alert("Bem vindo!");
-                location.replace("./paginas/Email.html");
+                location.replace("../paginas/Email.html");
             }
             else{
                 alert("Email ou Senha incorretos!");
@@ -72,7 +72,7 @@ $(document).ready(function(){
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
-                url:        "./php/gravarXML.php",
+                url:        "../php/gravarXML.php",
 
                 data:{
                     email:              ajax_email,
