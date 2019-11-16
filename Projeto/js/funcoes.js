@@ -1,15 +1,18 @@
 $(document).ready(function(){
     
     $("#bEntrar").click(function(){
-        loguin();
+        login();
+    });
+
+    $("#bCadastro").click(function(){
+        location.replace("./paginas/Cadastro.html");
     });
 
     $("#bCadastrar").click(function(){
-        location.replace("./paginas/Cadastro.html");
         cadastro();
     });
        
-    function loguin(){
+    function login(){
         var ajax_email      = $("#tEmail").val();
         var ajax_senha      = $("#tSenha").val();
 
@@ -19,39 +22,27 @@ $(document).ready(function(){
 
         else{
 
-            var ajax_emailLido = null;
-            var ajax_senhaLida = null;
-            var loginOK=false;
-
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
-                url:        "./php/listarXML.php",
+                url:        "php/listarXML.php",
+                data:{
+                    "email": email,
+                    "senha": senha
+
+                },
 
                 success:function(retorno){
-
-                    for(var i=0;i<retorno.length;i++){
-                    ajax_emailLido = retorno[i].email;
-                    ajax_senhaLida = retorno[i].senha;
+                    if(retorno = true){
+                        alert("Bem vindo!");
+                        location.replace("./paginas/Email.html");
+                    }
+                    else{
+                        alert("Email ou Senha incorretos!");
+                    }
                     
-                    if(ajax_emailLido==ajax_email && ajax_senhaLida==ajax_senha){
-                            loginOK=true;
-                            console.log("ajax_email"+ajax_email);
-                            console.log("ajax_senha"+ajax_senha);
-                    } 
-                }                    
-                    
-                }
+                }                     
             });
-
-            if(loginOK==true){
-               
-                alert("Bem vindo!");
-                location.replace("./paginas/Email.html");
-            }
-            else{
-                alert("Email ou Senha incorretos!");
-            }
         }
     };
 
@@ -72,7 +63,7 @@ $(document).ready(function(){
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
-                url:        "./php/gravarXML.php",
+                url:        "../php/gravarXML.php",
 
                 data:{
                     email:              ajax_email,
@@ -80,13 +71,8 @@ $(document).ready(function(){
                 },
 
                 success:function(retorno){
-                    for(var i=0; i < resposta.length; i++){
-                        alert(resposta[i].email);
-                        alert(resposta[i].senha);
-                    }
-                    
                     alert(retorno);
-                    location.replace("./Index.html");
+                    location.replace("../Index.html");
                 }
             });
         }   
