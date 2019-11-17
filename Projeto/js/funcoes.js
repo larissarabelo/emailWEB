@@ -33,12 +33,15 @@ $(document).ready(function(){
                 },
 
                 success:function(retorno){
-                    if(retorno == true){
+                    if(retorno == 1){
                         alert("Bem vindo!");
                         location.replace("./paginas/Email.html");
                     }
-                    else{
+                    else if(retorno == 2){
                         alert("Email ou Senha incorretos!");
+                    }
+                    else if(retorno == 3){
+                        alert("Preencha todos os campos!");
                     }
                     
                 }                     
