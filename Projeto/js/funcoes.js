@@ -3,14 +3,11 @@ $(document).ready(function(){
     $("#bEntrar").click(function(){
         login();
     });
-
-    $("#bCadastro").click(function(){
-        location.replace("./paginas/Cadastro.html");
-    });
-
+    
     $("#bCadastrar").click(function(){
         cadastro();
     });
+});
        
     function login(){
         var ajax_email      = $("#tEmail").val();
@@ -21,7 +18,8 @@ $(document).ready(function(){
         }
 
         else{
-        
+            alert();
+
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
@@ -35,18 +33,22 @@ $(document).ready(function(){
 
                 success:function(retorno){
                     if(retorno == true){
-
+                    if(retorno == 1){
                         alert("Bem vindo!");
                         location.replace("./paginas/Email.html");
                     }
-                    else{
+                    else if(retorno == 2){
                         alert("Email ou Senha incorretos!");
+                    }
+                    else if(retorno == 3){
+                        alert("Preencha todos os campos!");
                     }
                     
                 }                     
+                }
             });
         }
-    };
+    }
 
     function cadastro(){
         var ajax_email      = $("#tEmail").val();
@@ -77,6 +79,5 @@ $(document).ready(function(){
                     location.replace("../Index.html");
                 }
             });
-        }   
-    };
-});
+        }
+    }
