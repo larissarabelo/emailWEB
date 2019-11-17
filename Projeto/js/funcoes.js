@@ -21,19 +21,21 @@ $(document).ready(function(){
         }
 
         else{
-
+        
             $.ajax({
                 type:       "POST",
                 dataType:   "json",
-                url:        "php/listarXML.php",
+                url:        "./php/listarXML.php",
                 data:{
-                    "email": email,
-                    "senha": senha
+                    "email": ajax_email,
+                    "senha": ajax_senha
 
                 },
 
+
                 success:function(retorno){
-                    if(retorno = true){
+                    if(retorno == true){
+
                         alert("Bem vindo!");
                         location.replace("./paginas/Email.html");
                     }
@@ -66,8 +68,8 @@ $(document).ready(function(){
                 url:        "../php/gravarXML.php",
 
                 data:{
-                    email:              ajax_email,
-                    senha:              ajax_senha
+                    "email": email,
+                    "senha": senha
                 },
 
                 success:function(retorno){

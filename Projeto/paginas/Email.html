@@ -2,37 +2,62 @@
     <head>
         
         <meta charset="utf-8">
+        <link type="sytlesheet" href="../css/caixaEntrada.css"> 
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="../js/funcoes.js"></script>
 
         <h1>Bem vindo a sua caixa de entrada!</h1>
-        <!--
-            
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="lixeira.html">Lixeira</a></li>
-            <li><a href="favoritos.html">Favoritos</a></li>
-            <li><a href="about.asp">Logout</a></li>
-        </ul>
-
-        -->
         
     </head>
 
     <body>
-        <navbar>
-            <div>
-                <button id="bMenu">hgyiggi</button>
-            </div>
-            <div>
-                <p>Barra Pesquisa</p>
-            </div>
-            <div>
-                <p id="pNome">Usuario</p>
-            </div>
-            <div>
-                <button id="bConta">"Foto"</button>
-            </div>
-        </navbar>
+        <table id="tableMenu">
+            <tbody>
+                <tr>
+                    <td><img src="../imagens/menuIcone.png" width="15px" height="15px"> <input id="barraPesquisa" size="15" placeholder="Pesquisar"></td>
+                </tr>
+
+                <tr>
+                    <td><button id="bNovaMensagem">+Nova mensagem</button></td> <td><p>Caixa de Entrada!</p></td>
+                </tr>
+
+                <tr>
+                    <td><img src="../imagens/menuIcone.png" width="15px" height="15px"></td><td> <button id="favoritos">Favoritos</button> </td>
+                </tr>
+
+                
+                <tr>
+                    <td><img src="../imagens/menuIcone.png" width="15px" height="15px"></td><td><button id="caixaEntrada">Caixa de Entrada</button> </td>
+                </tr>
+
+                
+                <tr>
+                    <td> <img src="../imagens/menuIcone.png" width="15px" height="15px"> </td> <td><button id="lixo">Lixo Eletrônico</button></td>
+                </tr>
+                <tr>
+                    <td> <img src="../imagens/menuIcone.png" width="15px" height="15px"> </td> <td><button id="rascunho">Rascunho</button></td>
+                </tr>
+                <tr>
+                    <td> <img src="../imagens/menuIcone.png" width="15px" height="15px"> </td> <td><button id="enviados">Itens Enviados </button></td>
+                </tr>
+
+                <tr>
+                    <td> <img src="../imagens/menuIcone.png" width="15px" height="15px"> </td> <td><button id="excluidos">Itens Excluídos </button></td>
+                </tr>
+                <tr>
+                    <td> <img src="../imagens/menuIcone.png" width="15px" height="15px"> </td> <td><button id="arquivoMorto">Arquivo Morto </button></td>
+                </tr>
+            </tbody>
+
+        
+
+
+            <table id="tableEmails">
+                <tbody>
+
+                </tbody>
+
+            </table>
+        </table>
     </body>
 </html>
