@@ -3,11 +3,7 @@ $(document).ready(function(){
     $("#bEntrar").click(function(){
         login();
     });
-
-    $("#bCadastro").click(function(){
-        location.replace("./paginas/Cadastro.html");
-    });
-
+    
     $("#bCadastrar").click(function(){
         cadastro();
     });
